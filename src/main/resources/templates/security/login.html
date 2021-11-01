@@ -1,32 +1,43 @@
 <div xmlns:th="http://www.thymeleaf.org" 
-th:replace="~{/layout/index :: dynamic(~{::main})}">
-
+>
+   
+   <link rel="stylesheet" href="/assets/css/Signup.css">
 <main>
 <form th:action="@{/security/login}" method ="post" class="col-sm-8 col-sm-offset-2">
-<div class="panel panel-primary">
-<div class="panel-heading"> SHOPPING CART LOGIN </div>
-<div class="panel-body">
-<div class="form-group">
-<div>Username:</div>
-<input name="username" class="form-control">
-</div>
-<div class="form-group">
-<div>Password:</div>
-<input name="password" type="password" class="form-control">
-</div>
-<div class="form-group">
-<div class="form-control">
-<label class="checkbox-inline">
-<input type="checkbox" name="remember-me"> Remember me? 
-</label>
-</div>
-</div>
-</div>
-<div class="panel-footer text-right">
-<i class="pull-left text-danger" th:text="${message}"></i>
-<button class="btn btn-success">Login</button>
-</div>
-</div>
+ <div class="main_div">
+    <div class="title">Login Form</div>
+    <div class="social_icons">
+      <a href="#"><i class="fab fa-facebook-f"></i> <span>Facebook</span></a>
+      <a href="#"><i class="fab fa-twitter"></i><span>Twitter</span></a>
+    </div>
+    <form action="#">
+      <div class="input_box">
+        <input name="username" type="text" placeholder="Email or Phone" required>
+        <div class="icon"><i class="fas fa-user"></i></div>
+      </div>
+      <div class="input_box">
+        <input  name="password" type="password" placeholder="Password" required>
+        <div class="icon"><i class="fas fa-lock"></i></div>
+      </div>
+      <div class="option_div">
+        <div class="check_box">
+          <input type="checkbox">
+          <span>Remember me</span>
+        </div>
+        <div class="forget_div">
+          <a href="/Registration.html">Forgot password?</a>
+        </div>
+      </div>
+      <div class="input_box button">
+        <input type="submit" value="Login">
+      </div>
+            </a>
+      
+      <div class="sign_up">
+        Not a member? <a href="#">Signup now</a>
+      </div>
+    </form>
+  </div>
 </form>
 </main>
 

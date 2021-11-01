@@ -15,7 +15,7 @@ public String loginForm(Model model) {
 @RequestMapping("/security/login/seccess")
 public String loginSuccess(Model model) {
 	model.addAttribute("message", "Đăng nhập thành công!");
-	return "security/login";
+	return "/home/home";
 }
 
 @RequestMapping("/security/login/error")
