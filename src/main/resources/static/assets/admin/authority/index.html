@@ -1,0 +1,67 @@
+<section class="pcoded-main-container">
+        <div class="pcoded-wrapper">
+            <div class="pcoded-content">
+                <div class="pcoded-inner-content">
+                    <!-- [ breadcrumb ] start -->
+                    <div class="page-header">
+                        <div class="page-block">
+                            <div class="row align-items-center">
+                                <div class="col-md-12">
+                                    <div class="page-header-title">
+                                        <h5 class="m-b-10">Web Admin</h5>
+                                    </div>
+                                    <ul class="breadcrumb">
+                                        <li class="breadcrumb-item"><a href="#!home"><i class='bx bx-home-alt'></i></a></li>
+                                        <li class="breadcrumb-item"><a href="javascript:">Authority</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- [ breadcrumb ] end -->
+                    <div class="">
+                        <div class="">
+                            <!-- [ Main Content ] start -->
+                            <div class="row">
+                              
+                                <div class="col-xl-12">
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <h5>Authority Table</h5>
+                                            <span class="d-block m-t-5">grant permissions to the <code>user</code> </span>
+                                        </div>
+                                        <div class="card-block table-border-style">
+                                            <div class="table-responsive">
+                                                <table class="table table-hover">
+												<thead>
+													<tr>
+														<th class="text-table">Name</th>
+														<th class="text-table" ng-repeat="role in roles" class="">{{role.name}}</th>
+													</tr>
+												</thead>
+												<tbody>
+													<tr ng-repeat="acc in admins">
+														<td>{{acc.fullname}}</td>
+														<th ng-repeat="role in roles" class=""><input
+															ng-checked="authority_of(acc, role)"
+															ng-click="authority_changed(acc, role)" type="checkbox"></th>
+													</tr>
+												</tbody>
+											</table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- [ Hover-table ] end -->
+
+                                <!-- [ stiped-table ] start -->
+                             
+                                <!-- [ stiped-table ] end -->
+                            </div>
+                            <!-- [ Main Content ] end -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>

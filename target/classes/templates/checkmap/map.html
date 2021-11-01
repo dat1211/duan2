@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" 
+th:replace="~{/layout/index :: dynamic(~{::main})}">
+
+ <main>
+<link rel="stylesheet" id="fe-style-css" href="https://ananas.vn/wp-content/themes/ananas/fe-assets/css/style.css?ver=1.0.1.1" type="text/css" media="all">
+
+<!------ Include the above in your HEAD tag ---------->
+
+
+  
+  <script>
+   
+    function initMap() {       
+      var uluru = { lat: 16.070907, lng: 108.216719 };
+      
+      var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 14,
+        center: uluru,
+      });
+      
+      addMarker({
+          coords:{lat: 16.070907, lng: 108.216719} ,
+          iconImages:  'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',
+          content: '<div> <h6>Shop tui</h6> </div>  <div> <h10>Lầu 1 - 41 Lê Duẩn, Hải Châu</h10> </div> <div> <h10>028.6657.9962</h10> </div> <div> <h10>10:00 am - 10:00 pm</h10> </div> '
+      });
+      addMarker({
+          
+          coords:{lat: 16.086172, lng: 108.235456},
+          iconImages:  'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',
+          content: '<div> <h6>Shop tui</h6> </div>  <div> <h10>87 Trần Thánh Tông, Sơn Trà</h10> </div> <div> <h10>028.2229.9931</h10> </div> <div> <h10>9:00 am - 10:00 pm</h10> </div> '
+      });
+      addMarker({
+          coords:{lat: 16.075777, lng: 108.215363} ,
+          iconImages:  'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',
+          content: '<div> <h6>Shop tui</h6> </div>  <div> <h10>33 Đống Đa, Quận Hải Châu</h10> </div> <div> <h10>028.6657.9962</h10> </div> <div> <h10>10:00 am - 10:00 pm</h10> </div> '
+      });
+      addMarker({
+          
+          coords:{lat: 16.082878, lng: 108.222088},
+          iconImages:  'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',
+          content: '<div> <h6>Shop tui</h6> </div>  <div> <h10>604 Thuận Phước, Quận Hải Châu</h10> </div> <div> <h10>028.2229.9931</h10> </div> <div> <h10>9:00 am - 10:00 pm</h10> </div> '
+      });
+      function addMarker(props){
+          var marker = new google.maps.Marker({
+        position: props.coords,
+        map: map,
+        icon : props.iconImages
+      });
+      if(props.content){
+          var infoWindow = new google.maps.InfoWindow({
+              content: props.content
+          });
+          marker.addListener('click', function(){
+              infoWindow.open(map, marker);
+          });
+      }
+      }
+    }
+  </script>
+<div class="prd1-cont container-fluid">
+  <h1 class="map-title text-center">HỆ THỐNG CỬA HÀNG CHÍNH THỨC</h1>
+
+  <div class="row map-bar-search">
+    <div class="col-xs-12 col-sm-12 col-md-12 map-bar-search-left">
+      <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-4 map-bar-text-1">Từng ngày đến gần bạn hơn</div>
+
+
+      </div>
+    </div>
+
+
+  </div>
+<div class="row ">
+    <div class="col-sm-3" >
+      <div id="store-list" class="cart">
+        <ul class="list-group">
+          <li class="list-group-item title">ĐÂU ĐÓ QUANH ĐÂY </li>
+          <li class="list-group-item divider"></li>
+          <li class="list-group-item items">
+
+            <div class="media">
+              <div class="media-body">
+                <a href="" class="title-1">ANANAS ĐẶNG THỊ NHU</a>
+                <h4 class="address">Lầu 1 - 41 Lê Duẩn, Quận Hải Châu</h4>
+                <h4 class="phone">028.6657.9962</h4>
+                <h4 class="opentime">10:00 am - 10:00 pm</h4>
+
+              </div>
+            </div>
+            <div class="divider"></div>
+
+            <div class="media" spot_id="1">
+              <div class="media-body">
+                <a href="" class="title-1">ANANAS FLAGSHIP</a>
+                <h4 class="address">87 Trần Thánh Tông, Quận Sơn Trà</h4>
+                <h4 class="phone">028.2229.9931</h4>
+                <h4 class="opentime">9:00 am - 10:00 pm</h4>
+              
+              </div>
+            </div>
+            <div class="divider"></div>
+
+            <div class="media" spot_id="2">
+              <div class="media-body">
+                <a class="title-1">ANANAS FLAGSHIP</a>
+                <h4 class="address">33 Đống Đa, Quận Hải Châu</h4>
+                <h4 class="phone">028.6657.9912</h4>
+                <h4 class="opentime">9:00 am - 10:00 pm</h4>
+
+              </div>
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="media" spot_id="2">
+              <div class="media-body">
+                <a href="" class="title-1">ANANAS FLAGSHIP</a>
+                <h4 class="address">604 Thuận Phước, Quận Hải Châu</h4>
+                <h4 class="phone">028.6657.9912</h4>
+                <h4 class="opentime">9:00 am - 10:00 pm</h4>
+
+              </div>
+            </div>
+      </div>
+    </div>
+    
+    <div  class="col-sm-9"  >   
+      <div style="height: 100%; width: 866px; position: absolute; top: 0px; left: 14px; background-color: rgb(229, 227, 223);">
+      <div id="map"></div>
+      </div> 
+    </div>
+
+</div>
+
+
+
+
+ 
+<br>
+  <div class="map-divider hidden-xs hidden-sm"></div>
+
+</div>
+<script
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCMLyzTVWYt77qZCgF2bK2Xj04JnXLU4gk&callback=initMap&libraries=&v=weekly"></script>
+    <main>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:fragment="dynamic(main)">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java 6</title>
+
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<link rel="stylesheet" href="/assets/css/style.css">
+<link href="/assets/css/shopping-cart-app.css" rel="stylesheet"/>
+<link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+
+</head>
+<body
+ng-app="shopping-cart-app" ng-controller="shopping-cart-ctrl">
+     <header class="row">  
+     <div th:replace="/layout/_menu.html"></div>    
+    </header>
+     <nav class="header container-fluid hidden-xs hidden-sm">
+     <div>
+        <article class="row">
+            <div th:replace="${main}"></div>
+           
+            
+        </article> 
+        
+      </div>
+       </nav>
+       
+       
+       
+       
+     <footer class="row">
+ <div th:replace="/layout/footer.html">
+ </div>    
+     </footer>
+    
+     <script src="/assets/js/shopping-cart-app.js" ></script>
+</body>
+</html>

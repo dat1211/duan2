@@ -1,0 +1,149 @@
+<div xmlns:th="'http://www.thymeleaf.org">
+	<link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css'
+zrel='stylesheet'>
+	<link rel="stylesheet" href="/assets/css/Header.css">
+<script src="https://code.iconify.design/2/2.0.3/iconify.min.js"></script>
+	<nav>
+
+		<div class="header-container">
+			<div class="row">
+				<ul class="menu">
+					<li><a th:href="@{/checkmap/map}"> <img
+							src="/assets/images/icon_tim_cua_hang.svg"> Search Shop
+					</a></li>
+					<th:block th:if="${#request.remoteUser}">
+						<li
+							th:if="${#request.isUserInRole('DIRE') or #request.isUserInRole('STAF')}">
+							<a th:href="@{/admin/home/index}"> <img
+								src="/assets/images/icon_tra_cuu_don_hang.svg">
+								Administration
+						</a>
+						</li>
+						<li><a th:href="@{/security/login/error}"> <img
+								src="/assets/images/icon_dang_nhap.svg"> Sign Out
+						</a></li>
+						<li><a th:href="@{/order/list}"> <img
+								src="/assets/images/icon_heart_header.svg"> Your Orders
+						</a></li>
+					</th:block>
+
+					<th:block th:unless="${#request.remoteUser}">
+						<li><a th:href="@{/security/login/form}"> <img
+								src="/assets/images/icon_dang_nhap.svg"> Sign In
+						</a></li>
+					</th:block>
+					<li><a th:href="@{/cart/view}"> <img
+							src="/assets/images/icon_gio_hang.svg"> Cart ({{cart.count}})
+					</a> <!-- <span class="countProduct">0</span> --></li>
+				</ul>
+			</div>
+			<div class="row">
+				<div class="navbar">
+					<div class="icon col-md-2">
+						<a href=""><img
+							src="/assets/images/Screenshot 2021-05-19 223539.png" alt=""></a>
+					</div>
+					<div class="dropdown col-md-8">
+						<ul class="links">
+							<li class="line"><a th:href="@{/}">Home</a></li>
+
+							<li class="line"><a th:href="@{/}">Product</a><li>
+
+							<li class="line"><a th:href="@{/}">Men</a> <i
+								class='bx bxs-chevron-down htmlcss-arrow arrow  '></i>
+								<ul class="htmlCss-sub-menu sub-menu">
+									<li ><span class="iconify" data-icon="ion:shirt-outline"></span><a href="#">Mens shirt</a>
+										<ul class="more-sub-menu sub-menu">
+											<li><a  href="#">Shirt</a></li>
+											<li><a href="#">T-shirt</a></li>
+											<li><a href="#">Polo shirt</a></li>
+											<li><a href="#">Coat</a></li>
+											<li><a href="#">Vest</a></li>
+											<li><a href="#">Waistcoat</a></li>
+										</ul></li>
+									<li ><span class="iconify" data-icon="icon-park:clothes-pants" data-width="16" data-height="16">  </span>
+									<a href="#">Male pants</a>
+										<ul class="more-sub-menu sub-menu">
+											<li><a href="#">Jeans</a></li>
+											<li><a href="#">Trouser</a></li>
+											<li><a href="#">Kaki pant</a></li>
+											<li><a href="#">Jogger p</a></li>
+											<li><a href="#">Short</a></li>
+											<li><a href="#">Underwear</a></li>	
+										</ul></li>
+									<li><span class="iconify" data-icon="ps:shoe" data-width="16" data-height="16"></span>
+									<a href="#">Footwears</a> 
+										<ul class="more-sub-menu sub-menu3">
+											<li><a href="#">Shoes</a></li>
+											<li><a href="#">Sandal</a></li>	
+										</ul></li>
+									<li class="more"><span class="iconify" data-icon="feather:watch"></span><a href="#">Accessory</a> 
+										<ul class="more-sub-menu sub-menu">
+											<li><a href="#">Hat</a></li>
+											<li><a href="#">Handbagr</a></li>
+											<li><a href="#">Glasses</a></li>
+											<li><a href="#">Clock</a></li>
+										</ul></li>
+								</ul></li>
+
+							<li class="line"><a th:href="@{/}">Woman</a> <i
+								class='bx bxs-chevron-down htmlcss-arrow arrow  '></i>
+								<ul class="htmlCss-sub-menu sub-menu2">
+										<li ><span class="iconify" data-icon="ion:shirt-outline"></span><a href="#">Woman shirt</a>
+										<ul class="more-sub-menu sub-menu">
+											<li><a  href="#">Shirt</a></li>
+											<li><a href="#">T-shirt</a></li>
+											<li><a href="#">Polo shirt</a></li>
+											<li><a href="#">Coat</a></li>
+											<li><a href="#">Vest</a></li>
+											<li><a href="#">Waistcoat</a></li>
+										</ul></li>
+									<li ><span class="iconify" data-icon="icon-park:clothes-pants" data-width="16" data-height="16">  </span>
+									<a href="#">Pants</a>
+										<ul class="more-sub-menu sub-menu">
+											<li><a href="#">Jeans</a></li>
+											<li><a href="#">Trouser</a></li>
+											<li><a href="#">Kaki pant</a></li>
+											<li><a href="#">Jogger p</a></li>
+											<li><a href="#">Short</a></li>
+											<li><a href="#">Underwear</a></li>	
+										</ul></li>
+									<li><span class="iconify" data-icon="ps:shoe" data-width="16" data-height="16"></span>
+									<a href="#">Footwears</a> 
+										<ul class="more-sub-menu sub-menu3">
+											<li><a href="#">Shoes</a></li>
+											<li><a href="#">Sandal</a></li>	
+										</ul></li>
+									<li class="more"><span class="iconify" data-icon="feather:watch"></span><a href="#">Accessory</a> 
+										<ul class="more-sub-menu sub-menu">
+											<li><a href="#">Hat</a></li>
+											<li><a href="#">Handbagr</a></li>
+											<li><a href="#">Glasses</a></li>
+											<li><a href="#">Clock</a></li>
+										</ul></li>
+								</ul></li>
+
+
+
+							<li class="line"><a href="">SALE OFF</a></li>
+							<li class="line"><a href=""><img
+									src="/assets/images/DiscoverYOU.svg" alt=""></a></li>
+						</ul>
+					</div>
+					<div class="search col-sm-12 col-md-2">
+
+						<input class="srch" type="search" name="" placeholder="Tìm kiếm">
+						<i class='bx bx-search'></i>
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+		<!-- Optional JavaScript -->
+		<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	</nav>
+
+
+
+</div>

@@ -1,0 +1,65 @@
+<div class="card">
+	<div class="card-header">
+		<h5>Category Edition</h5>
+		<span class="d-block m-t-5">edit for the <code>category</code>
+		</span>
+	</div>
+	<div class="panel-body">
+		<div class="row">
+		
+			<div class="col-md-12">
+				<div class="card-user">
+					
+					<div class="card-header">
+						<form>
+							<div class="row">
+
+								<div class="col-md-12 px-1">
+									<div class="form-group">
+										<label>ID</label> 
+										<input ng-model="form.id" name="id" class="form-control " placeholder="Enter ID">
+                               
+									</div>
+								</div>
+								
+							</div>
+							<div class="row">
+								<div class="col-md-12 pr-1">
+									<div class="form-group">
+										<label>Name</label>  
+										<input ng-model="form.name" name="name" class="form-control " placeholder="Enter name">
+                                
+									</div>
+								</div>
+								
+							</div>
+							
+							<div class="row">
+							<div class="col-md-4 px-1">
+							</div>
+								<div class="col-md-8 px-1">
+									<label></label>
+									<div class="form-group">
+										<button ng-click="create()" class="btn btn-create">
+											<b class="glyphicon glyphicon-check"></b> Create
+										</button>
+										<button ng-click="update()" class="btn btn-update">
+											<b class="glyphicon glyphicon-floppy-disk"></b> Update
+										</button>
+
+										<button ng-click="reset()" class="btn btn-reset">
+											<b class="glyphicon glyphicon-refresh"></b> Reset
+										</button>
+									</div>
+								</div>
+
+							</div>
+
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</div>

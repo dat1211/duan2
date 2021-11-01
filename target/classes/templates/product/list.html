@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" 
+th:replace="~{/layout/index :: dynamic(~{::main})}">
+ <link rel="stylesheet" href="/assets/css/style.css">
+    <!-- Boxicons CDN Link -->
+    
+    <body>
+       <main class="row">
+          
+          
+          <div th:each="p: ${items}" class="col-sm-4">
+           <div  class="product-card" >
+    <div class="logo-cart">
+      <img src="/assets/images/logo.jpg" alt="logo">
+      
+
+        <i th:attr="ng-click=@{|cart.add(${p.id})|}" class='bx bx-shopping-bag'> </i>
+ 
+     
+    </div>
+    <div class="main-images">
+      
+      <a th:href="@{|/product/detail/${p.id}|}">
+          <img th:src="@{|/assets/images/${p.image}|}"></a>
+    </div>
+    <div class="shoe-details">
+      <div class="panel-title" th:utext="${p.name}">
+          </div>
+      <p>Lorem ipsum dolor sit lorenm i amet, consectetur adipisicing elit. Eum, ea, ducimus!</p>
+      <div class="stars">
+        <i class='bx bxs-star' ></i>
+        <i class='bx bxs-star' ></i>
+        <i class='bx bxs-star' ></i>
+        <i class='bx bxs-star' ></i>
+        <i class='bx bx-star' ></i>
+      </div>
+    </div>
+    <div class="color-price">
+      <div class="color-option">
+        <span class="color">Colour:</span>
+        <div class="circles">
+          <span class="circle blue active"  id="blue"></span>
+         
+        </div>
+      </div>
+      <div class="price">
+        <span class="price_num">$[[${p.price}]]</span>
+        <span class="price_letter">Nine dollar only</span>
+      </div>
+    </div>
+    <div class="button">
+      <div class="button-layer"></div>
+      <button th:attr="ng-click=@{|cart.add(${p.id})|}" >Add To Cart</button>
+    </div>
+  </div>
+  </div>
+
+
+  <script>
+   let circle = document.querySelector(".color-option");
+
+   circle.addEventListener("click", (e)=>{
+     let target = e.target;
+     if(target.classList.contains("circle")){
+       circle.querySelector(".active").classList.remove("active");
+       target.classList.add("active");
+       document.querySelector(".main-images .active").classList.remove("active");
+       document.querySelector(`.main-images .${target.id}`).classList.add("active");
+     }
+   });
+
+  </script>
+       </main>
+       
+       
+       
+       
+      
+       
+    </body>
+</html>
